@@ -2,6 +2,4 @@
 
 <img width="695" height="597" alt="image" src="https://github.com/user-attachments/assets/0bf4272a-5e3f-4b2e-bc77-2b11d00e751d" />
 
-<img width="610" height="379" alt="image" src="https://github.com/user-attachments/assets/eb91b95e-026b-4c39-b586-31386721cb17" />
-
 <img width="591" height="472" alt="image" src="https://github.com/user-attachments/assets/418f607e-5e02-4214-9b73-2e716f431cbb" />
