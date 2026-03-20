@@ -5,3 +5,13 @@
 <img width="984" height="323" alt="image" src="https://github.com/user-attachments/assets/44bf74a6-6e4a-427f-8432-18a9b74bf6ae" />
 
 <img width="1028" height="90" alt="image" src="https://github.com/user-attachments/assets/ab67ae63-ae2e-4542-af25-1f5460e45658" />
+
+
+https://github.com/acckiymops/kuber-homeworks/blob/main/1.4/deployment-multi-container.yaml
+https://github.com/acckiymops/kuber-homeworks/blob/main/1.4/service-clusterip.yaml
+https://github.com/acckiymops/kuber-homeworks/blob/main/1.4/service-nodeport.yaml
+https://github.com/acckiymops/kuber-homeworks/blob/main/1.4/deployment-backend.yaml
+https://github.com/acckiymops/kuber-homeworks/blob/main/1.4/deployment-frontend.yaml
+https://github.com/acckiymops/kuber-homeworks/blob/main/1.4/service-backend.yaml
+https://github.com/acckiymops/kuber-homeworks/blob/main/1.4/service-frontend.yaml
+https://github.com/acckiymops/kuber-homeworks/blob/main/1.4/ingress.yaml
