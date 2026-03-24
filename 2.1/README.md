@@ -8,3 +8,8 @@
 
 <img width="921" height="460" alt="image" src="https://github.com/user-attachments/assets/755b1f1b-7495-40f4-bf25-7ccad9544281" />  
 
+https://github.com/acckiymops/kuber-homeworks/blob/main/2.1/containers-data-exchange.yaml  
+https://github.com/acckiymops/kuber-homeworks/blob/main/2.1/describe_pod_data-exchange.txt  
+https://github.com/acckiymops/kuber-homeworks/blob/main/2.1/describe_pv.txt  
+https://github.com/acckiymops/kuber-homeworks/blob/main/2.1/pv-pvc.yaml  
+https://github.com/acckiymops/kuber-homeworks/blob/main/2.1/sc.yaml  
