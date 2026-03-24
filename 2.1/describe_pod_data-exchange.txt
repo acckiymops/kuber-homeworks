@@ -1,0 +1,89 @@
+Name:             data-exchange-69bdd55bcf-7tlmk
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             ubuntu/10.130.0.32
+Start Time:       Mon, 23 Mar 2026 19:37:42 +0000
+Labels:           app=multitool
+                  pod-template-hash=69bdd55bcf
+Annotations:      cni.projectcalico.org/containerID: 9f7126cec0416c18e1b8af2c5c776bc68b1214180be402d4640a5c73111f95cb
+                  cni.projectcalico.org/podIP: 10.1.243.202/32
+                  cni.projectcalico.org/podIPs: 10.1.243.202/32
+Status:           Running
+IP:               10.1.243.202
+IPs:
+  IP:           10.1.243.202
+Controlled By:  ReplicaSet/data-exchange-69bdd55bcf
+Containers:
+  writer:
+    Container ID:  containerd://9b98629e42453ea6e0ee04865982c4ea6c66a947e2883ac7795a42ad61b6a3d7
+    Image:         busybox
+    Image ID:      docker.io/library/busybox@sha256:b3255e7dfbcd10cb367af0d409747d511aeb66dfac98cf30e97e87e4207dd76f
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /bin/sh
+      -c
+    Args:
+      while true; do date >> /var/input/date.txt; sleep 5; done
+    State:          Running
+      Started:      Mon, 23 Mar 2026 19:37:44 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/input from datetime (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-xqv2d (ro)
+  reader:
+    Container ID:  containerd://922199bddd4ddac0de06b5e3b1cb9df0da55f956ff830fbb5bb55e51b30bb44c
+    Image:         wbitt/network-multitool
+    Image ID:      docker.io/wbitt/network-multitool@sha256:db2810fe2c8d36db074eab5d98fbf861c8ed55e0786d648d3477b3de9135632e
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /bin/bash
+      -c
+    Args:
+      tail -f /var/output/date.txt
+    State:          Running
+      Started:      Mon, 23 Mar 2026 19:37:45 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/output from datetime (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-xqv2d (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  datetime:
+    Type:       EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:     
+    SizeLimit:  <unset>
+  kube-api-access-xqv2d:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  3m25s  default-scheduler  Successfully assigned default/data-exchange-69bdd55bcf-7tlmk to ubuntu
+  Normal  Pulling    3m24s  kubelet            Pulling image "busybox"
+  Normal  Pulled     3m23s  kubelet            Successfully pulled image "busybox" in 830ms (830ms including waiting). Image size: 2222260 bytes.
+  Normal  Created    3m23s  kubelet            Created container: writer
+  Normal  Started    3m23s  kubelet            Started container writer
+  Normal  Pulling    3m23s  kubelet            Pulling image "wbitt/network-multitool"
+  Normal  Pulled     3m22s  kubelet            Successfully pulled image "wbitt/network-multitool" in 1.131s (1.131s including waiting). Image size: 96718848 bytes.
+  Normal  Created    3m22s  kubelet            Created container: reader
+  Normal  Started    3m22s  kubelet            Started container reader

@@ -1,0 +1,47 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: data-volume-claim
+spec:
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: microk8s-hostpath
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-exchange-sc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: multitool
+  template:
+    metadata:
+      labels:
+        app: multitool
+    spec:
+      containers:
+      - name: writer
+        image: busybox
+        command: ["/bin/sh", "-c"] 
+        args: ["while true; do date >> /var/input/date.txt; sleep 5; done"]
+        volumeMounts:
+        - name: data-pvc
+          mountPath: /var/input
+      - name: reader
+        image: wbitt/network-multitool
+        command: ["/bin/sh", "-c"]
+        args: ["tail -f /var/output/date.txt"]
+        volumeMounts:
+        - name: data-pvc
+          mountPath: /var/output
+      volumes:
+      - name: data-pvc
+        persistentVolumeClaim:
+          claimName: data-volume-claim
