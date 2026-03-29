@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-content
+  namespace: default
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Hello, world</title>
+    </head>
+    <body>
+      <h1>Привет, мир</h1>
+    </body>
+    </html>
