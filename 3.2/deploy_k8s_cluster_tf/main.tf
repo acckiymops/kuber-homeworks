@@ -35,7 +35,7 @@ resource "yandex_compute_instance" "master-node" {
   metadata = {
     serial-port-enable = 1
     ssh-keys           = "ubuntu:${var.ssh_key}"
-    user-data  = local.k8s_setup_script
+    user-data          = local.k8s_setup_script
   }
 }
 
@@ -66,7 +66,7 @@ resource "yandex_compute_instance" "worker-node" {
   metadata = {
     serial-port-enable = 1
     ssh-keys           = "ubuntu:${var.ssh_key}"
-    user-data  = local.k8s_setup_script
+    user-data          = local.k8s_setup_script
   }
 }
 
